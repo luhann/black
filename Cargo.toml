@@ -1,0 +1,17 @@
+[package]
+name = "black"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.43", features = ["derive"] }
+colored = { version = "3.0.0" }
+image = "0.25"
+rayon = "1.10.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+opt-level = 3
